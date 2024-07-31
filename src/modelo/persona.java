@@ -11,6 +11,17 @@ package modelo;
 abstract class persona {
     
     String nombres,apellidos,direccion,telefono,fecha_nacimiento;
+    
+    public persona(){}
+    public persona(String nombres, String apellidos, String direccion, String telefono, String fecha_nacimiento) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.fecha_nacimiento = fecha_nacimiento;
+    }
+    
+    
 
     public String getNombres() {
         return nombres;

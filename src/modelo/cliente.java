@@ -12,6 +12,15 @@ public class cliente extends persona {
     
     private String nit;
 
+    public cliente (){}
+
+    public cliente(String nit, String nombres, String apellidos, String direccion, String telefono, String fecha_nacimiento) {
+        super(nombres, apellidos, direccion, telefono, fecha_nacimiento);
+        this.nit = nit;
+    }
+
+    
+
     public String getNit() {
         return nit;
     }
@@ -30,6 +39,8 @@ public class cliente extends persona {
             System.out.println("Direccion: " + getDireccion());
             System.out.println("Telefono: " + getTelefono());
             System.out.println("Fecha de nacimiento: " + getFecha_nacimiento());
+            
+            System.out.println("---------------------------------------------------------");
 
         }
         catch (Exception ex){

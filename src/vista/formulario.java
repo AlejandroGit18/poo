@@ -13,8 +13,12 @@ public class formulario extends javax.swing.JFrame {
     /**
      * Creates new form formulario
      */
+    
+    cliente obj_cliente;
     public formulario() {
         initComponents();
+        
+        obj_cliente = new cliente();
     }
 
     /**
@@ -38,7 +42,8 @@ public class formulario extends javax.swing.JFrame {
         txt_Telefono = new javax.swing.JTextField();
         lbl_fn = new javax.swing.JLabel();
         txt_fn = new javax.swing.JTextField();
-        btn_Guardar = new javax.swing.JButton();
+        btn_modificar_nit = new javax.swing.JButton();
+        btn_Guardar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,10 +95,17 @@ public class formulario extends javax.swing.JFrame {
             }
         });
 
-        btn_Guardar.setText("Guardar");
-        btn_Guardar.addActionListener(new java.awt.event.ActionListener() {
+        btn_modificar_nit.setText("Modificar");
+        btn_modificar_nit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_GuardarActionPerformed(evt);
+                btn_modificar_nitActionPerformed(evt);
+            }
+        });
+
+        btn_Guardar1.setText("Guardar");
+        btn_Guardar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_Guardar1ActionPerformed(evt);
             }
         });
 
@@ -102,46 +114,47 @@ public class formulario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_nombres)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_Nombres, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_Nit1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txt_nit, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_Apellidos)
-                                .addGap(18, 18, 18)
-                                .addComponent(txt_Apellidos)))
-                        .addGap(64, 64, 64))
+                        .addComponent(lbl_Direccion)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_Direccion))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbl_Direccion)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_Direccion))
+                                .addComponent(lbl_Telefono)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_Telefono))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lbl_Telefono)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txt_Telefono))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lbl_fn)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txt_fn)))))))
+                                .addComponent(lbl_fn)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_fn)))))
                 .addGap(114, 114, 114))
             .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(btn_Guardar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_nombres)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_Nombres, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_Nit1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txt_nit, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_Apellidos)
+                        .addGap(18, 18, 18)
+                        .addComponent(txt_Apellidos)))
+                .addGap(28, 28, 28)
+                .addComponent(btn_modificar_nit)
+                .addGap(78, 78, 78))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(158, 158, 158)
+                    .addComponent(btn_Guardar1)
+                    .addContainerGap(170, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,8 +162,9 @@ public class formulario extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_nit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_Nit1))
-                .addGap(20, 20, 20)
+                    .addComponent(lbl_Nit1)
+                    .addComponent(btn_modificar_nit))
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_nombres)
                     .addComponent(txt_Nombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -170,9 +184,12 @@ public class formulario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_fn)
                     .addComponent(txt_fn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_Guardar)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(271, Short.MAX_VALUE)
+                    .addComponent(btn_Guardar1)
+                    .addContainerGap()))
         );
 
         pack();
@@ -202,9 +219,17 @@ public class formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_fnActionPerformed
 
-    private void btn_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarActionPerformed
-        // TODO add your handling code here:
-        cliente obj_cliente = new cliente();
+    private void btn_modificar_nitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificar_nitActionPerformed
+
+        obj_cliente.setNit(txt_nit.getText());
+        obj_cliente.agregar();
+        
+    }//GEN-LAST:event_btn_modificar_nitActionPerformed
+
+    private void btn_Guardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Guardar1ActionPerformed
+        //CODIGO DE VIDEO1:
+        //*************************************************************
+        /*cliente obj_cliente = new cliente();
         
         obj_cliente.setNit(txt_nit.getText());
         obj_cliente.setNombres(txt_Nombres.getText());
@@ -213,8 +238,14 @@ public class formulario extends javax.swing.JFrame {
         obj_cliente.setTelefono(txt_Telefono.getText());
         obj_cliente.setFecha_nacimiento(txt_fn.getText());
         
+        obj_cliente.agregar();*/
+        
+        
+         //CODIGO DE VIDEO2:
+        //*************************************************************       
+        obj_cliente = new cliente(txt_nit.getText(),txt_Nombres.getText(),txt_Apellidos.getText(),txt_Direccion.getText(),txt_Telefono.getText(),txt_fn.getText());
         obj_cliente.agregar();
-    }//GEN-LAST:event_btn_GuardarActionPerformed
+    }//GEN-LAST:event_btn_Guardar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,7 +283,8 @@ public class formulario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Guardar;
+    private javax.swing.JButton btn_Guardar1;
+    private javax.swing.JButton btn_modificar_nit;
     private javax.swing.JLabel lbl_Apellidos;
     private javax.swing.JLabel lbl_Direccion;
     private javax.swing.JLabel lbl_Nit1;
